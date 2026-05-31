@@ -1,194 +1,875 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Adebukola Abadariki Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+bash
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+PHOTO_B64=$(cat /home/claude/headshot_b64.txt)
+cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adebukola Abadariki — Cross-sector Systems Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1E3A;
+    --navy-mid: #1A3C5E;
+    --navy-light: #274D73;
+    --gold: #B8922A;
+    --gold-light: #D4AA4A;
+    --white: #FFFFFF;
+    --off-white: #F7F6F2;
+    --light-gray: #E8E6E0;
+    --text-muted: #7A8494;
+    --text-body: #2C3444;
+  }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Adebukola Abadariki Portfolio<br />
-						</h1>
-						<p>Hi, I'm <a href="https://www.linkedin.com/in/adebukola-abadariki/"target = '_blank'> Adebukola Abadariki</a>, an analyst who thrives on solving business problems. 
-							Skilled with SQL, Python, Tableau and Excel,
-							I'm eager to combine my passion for problem-solving with my business analytics skills to help companies make the best decisions.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Adebukola's Portfolio</a>
-					</header>
+  html { scroll-behavior: smooth; }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    color: var(--text-body);
+    background: var(--white);
+    overflow-x: hidden;
+  }
 
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/adebukola-abadariki/"target = '_blank' class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-									<li><a href="https://github.com/aabadariki"target = '_blank' class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://twitter.com/daibukola"target = '_blank' class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-						</ul>
-					</nav>
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13, 30, 58, 0.97);
+    backdrop-filter: blur(8px);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    border-bottom: 1px solid rgba(184,146,42,0.25);
+  }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .nav-brand span { color: var(--gold-light); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
 
-				<!-- Main -->
-					<div id="main">
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 6px 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://github.com/aabadariki/pdsnd_github/blob/master/bikeshare.py"target = '_blank'>Exploring US Bikeshare Data<br />
-									Using Python</a></h2>
-									<p>Made use of Python to explore data related to bike share systems for three major cities in the United States—Chicago, New York City, and Washington, I wrote code to import the data and answer interesting questions about it by computing descriptive statistics. This project also involved writing a script that takes in raw input to create an interactive experience in the terminal to present these statistics.
-									Skills: Data Science · Python (Programming Language) · Data Analysis</p>
-								</header>
-								<a href="https://github.com/aabadariki/pdsnd_github/blob/master/bikeshare.py"target = '_blank' class="image main"><img src="images/Bikeshare.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/aabadariki/pdsnd_github/blob/master/bikeshare.py"target = '_blank' class="button large">View Project</a></li>
-								</ul>
-							</article>
+  @media (max-width: 900px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 64px;
+      right: 0;
+      background: rgba(13,30,58,0.98);
+      flex-direction: column;
+      width: 200px;
+      padding: 1rem;
+      gap: 1rem;
+    }
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/aabadariki/Portfolio_Projects/blob/main/SQL_Portfolio_project_1.sql"target = '_blank'>Data Exploration<br />
-										With SQL</a></h2>
-									</header>
-									<a href="https://github.com/aabadariki/Portfolio_Projects/blob/main/SQL_Portfolio_project_1.sql"target = '_blank' class="image fit"><img src="images/Covid-19.jpg" alt="" /></a>
-									<p>In this project I used SQL Server to explore global COVID 19 data.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/aabadariki/Portfolio_Projects/blob/main/SQL_Portfolio_project_1.sql"target = '_blank' class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://public.tableau.com/app/profile/adebukola.abadariki/vizzes"target = '_blank'>Tableau<br />
-										Projects</a></h2>
-									</header>
-									<a href="https://public.tableau.com/app/profile/adebukola.abadariki/vizzes"target = '_blank' class="image fit"><img src="images/tableau.png" alt="" /></a>
-									<p>Dashboards, charts and everything in between. Take a moment to look at my tableau vizzes</p>
-									<ul class="actions special">
-										<li><a href="https://public.tableau.com/app/profile/adebukola.abadariki/vizzes"target = '_blank' class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/aabadariki/Portfolio_Projects/tree/main/SQL%20PROJECT%20-%20Investigate%20a%20Relational%20Database"target = '_blank'>Investigate a Movie Rental Database<br />
-										with SQL</a></h2>
-									</header>
-									<a href="https://github.com/aabadariki/Portfolio_Projects/tree/main/SQL%20PROJECT%20-%20Investigate%20a%20Relational%20Database"target = '_blank' class="image fit"><img src="images/Movie_Rental.jpg" alt="" /></a>
-									<p>In this project, I used SQL to explore a database related to movie rentals. Writing SQL code to run SQL queries and answer interesting questions about the database. I then built visualizations to showcase the output of my queries and synthesised valuable business insights concerning the rental business.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/aabadariki/Portfolio_Projects/tree/main/SQL%20PROJECT%20-%20Investigate%20a%20Relational%20Database"target = '_blank' class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/aabadariki/Portfolio_Projects/tree/main/NYSE_Project"target = '_blank'>Explore New York Stock Exchange S&P 500 dataset<br />
-										using Microsoft Excel</a></h2>
-									</header>
-									<a href="https://github.com/aabadariki/Portfolio_Projects/tree/main/NYSE_Project"target = '_blank' class="image fit"><img src="images/stock-exchange.jpg" alt="" /></a>
-									<p>I analyzed real life data from the New York Stock Exchange. Drawing a subset of a large dataset provided by Kaggle that contains historical financial data from S&P 500 companies. In the project, I carried out financial analysis on the data; I used excel to create Profit and loss statements for all companies, and then made financial forecasts about revenue generation based on each companies historical data.
+    .nav-links.active {
+      display: flex;
+    }
 
-										To finish, I provided visualisation of insights I gleaned, based on the descriptive statistics of a couple of Sectors. Specifically, I compared revenue generation between two different sectors.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/aabadariki/Portfolio_Projects/tree/main/NYSE_Project"target = '_blank' class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/aabadariki/Portfolio_Projects/tree/main/Query%20a%20Digital%20Music%20Store%20Database%20-%20SQL"target = '_blank'>Query a Digital Music<br />
-										Store</a></h2>
-									</header>
-									<a href="https://github.com/aabadariki/Portfolio_Projects/tree/main/Query%20a%20Digital%20Music%20Store%20Database%20-%20SQL"target = '_blank' class="image fit"><img src="images/Music_Store.jpg" alt="" /></a>
-									<p>Using SQL, I querried the Chinook Database, a database that holds information about a music store. The insight synthesised from this analysis is useful to the chinook team as regards understanding the media in their store, their customers and employees, and their invoice information.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/aabadariki/Portfolio_Projects/tree/main/Query%20a%20Digital%20Music%20Store%20Database%20-%20SQL"target = '_blank' class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-									
-										<h2><a href="https://github.com/aabadariki/Portfolio_Projects/blob/main/Adebukola_Excel_Project_Bike_Dashboard.xlsx"target = '_blank'>Bike Sales<br />
-										Dashboard</a></h2>
-									</header>
-									<a href="https://github.com/aabadariki/Portfolio_Projects/blob/main/Adebukola_Excel_Project_Bike_Dashboard.xlsx" target = '_blank'class="image fit"><img src="images/Bike_Sales_Dashboard.jpg" alt="" /></a>
-									<p>Diving into this project I brought life to sales data from a bike-selling company. Using my business acumen, I weaved the details into an Excel dashboard.
-										Now, I didn't spill all the insights here, but trust me, that dashboard is a goldmine. It's like a treasure map for sales managers.
-										This project wasn't just about my tech skills; it's a peek into how I think. It shouts, "Hey, I understand business, and I know how to make data work for it!". It'd actually be exciting if you take a look at the dashboard and share with me insights that you're able to gather.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/aabadariki/Portfolio_Projects/blob/main/Adebukola_Excel_Project_Bike_Dashboard.xlsx"target = '_blank' class="button">View Project</a></li>
-									</ul>
-								</article>
-							</section>
+    .nav-toggle {
+      display: block;
+    }
+  }
 
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 8% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(26,60,94,0.6) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-text { position: relative; z-index: 2; }
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 32px; height: 1px;
+    background: var(--gold);
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5.5vw, 72px);
+    font-weight: 500; line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .hero-name em {
+    font-style: italic; color: var(--gold-light);
+  }
+  .hero-title {
+    font-size: 15px; font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.04em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+  .hero-divider {
+    width: 48px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 2rem;
+  }
+  .hero-statement {
+    font-size: 18px; font-weight: 300; line-height: 1.75;
+    color: rgba(255,255,255,0.82);
+    max-width: 480px;
+    margin-bottom: 2.8rem;
+  }
+  .hero-statement strong {
+    color: var(--white); font-weight: 500;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 13px 30px;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.85);
+    padding: 13px 30px;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
+  .hero-visual {
+    position: relative; z-index: 2;
+    display: flex; justify-content: flex-end; align-items: center;
+  }
+  .hero-photo-wrap {
+    position: relative;
+    width: min(380px, 42vw);
+  }
+  .hero-photo-frame {
+    position: absolute; inset: -12px -12px 12px 12px;
+    border: 2px solid rgba(184,146,42,0.35);
+    pointer-events: none;
+  }
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 3/4; object-fit: cover; object-position: top;
+    display: block;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .hero-badge {
+    position: absolute; bottom: -16px; left: -16px;
+    background: var(--gold);
+    padding: 12px 18px;
+    color: var(--navy);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    line-height: 1.4;
+  }
 
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Location</h3>
-								<p>Ikeja, Lagos State<br />
-								Nigeria</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(+234)8158130046</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">aabadariki@yahoo.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-								
-									<li><a href="https://www.linkedin.com/in/adebukola-abadariki/"target = '_blank' class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-									<li><a href="https://github.com/aabadariki"target = '_blank' class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://twitter.com/daibukola"target = '_blank' class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+  /* SECTIONS COMMON */
+  section { padding: 96px 8%; }
+  .section-label {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::before {
+    content: '';
+    display: block; width: 24px; height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 500; line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+  }
+  .section-rule {
+    width: 40px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 2.5rem;
+  }
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+  /* ABOUT */
+  .about { background: var(--off-white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 2.5rem;
+  }
+  .stat-item {
+    background: var(--white);
+    padding: 1.5rem;
+    border-left: 3px solid var(--gold);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px; font-weight: 500;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 12px; font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+  .about-body p {
+    font-size: 16px; line-height: 1.85;
+    color: var(--text-body);
+    margin-bottom: 1.4rem;
+    font-weight: 300;
+  }
+  .about-body p:first-of-type {
+    font-size: 19px; font-weight: 400;
+    color: var(--navy-mid);
+    line-height: 1.7;
+  }
+  .about-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 2rem;
+  }
+  .tag {
+    font-size: 12px; font-weight: 500;
+    padding: 5px 14px;
+    border: 1px solid var(--light-gray);
+    color: var(--navy-mid);
+    letter-spacing: 0.04em;
+    background: var(--white);
+  }
 
-			</div>
+  /* WHAT I DO */
+  .expertise { background: var(--white); }
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 0;
+  }
+  .expertise-card {
+    background: var(--off-white);
+    padding: 2.5rem;
+    border-top: 3px solid transparent;
+    transition: border-color 0.25s;
+  }
+  .expertise-card:hover { border-color: var(--gold); }
+  .expertise-icon {
+    font-size: 28px; margin-bottom: 1.2rem;
+    display: block;
+  }
+  .expertise-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+  .expertise-card p {
+    font-size: 14px; line-height: 1.75;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  /* PORTFOLIO */
+  .portfolio { background: var(--navy); }
+  .portfolio .section-title { color: var(--white); }
+  .portfolio .section-label { color: var(--gold-light); }
+  .portfolio .section-label::before { background: var(--gold-light); }
+  .portfolio-intro {
+    font-size: 16px; line-height: 1.8; font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    max-width: 640px;
+    margin-bottom: 4rem;
+  }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+  .project-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2.5rem;
+    transition: background 0.25s, border-color 0.25s;
+    text-decoration: none;
+  }
+  .project-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(184,146,42,0.4);
+  }
+  .project-tag {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .project-tag::before {
+    content: '';
+    display: block; width: 16px; height: 1px;
+    background: var(--gold);
+  }
+  .project-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+  .project-card p {
+    font-size: 14px; line-height: 1.75;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+  .project-insight {
+    font-size: 13px; font-weight: 500;
+    color: var(--gold-light);
+    font-style: italic;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .project-tools {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  .tool-tag {
+    font-size: 11px; font-weight: 500;
+    padding: 3px 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.03em;
+  }
 
-	</body>
+  /* REPORT TEASER */
+  .report { background: var(--off-white); }
+  .report-inner {
+    background: var(--navy);
+    padding: 5rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .report-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .report-label::before {
+    content: ''; display: block;
+    width: 20px; height: 1px; background: var(--gold);
+  }
+  .report-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 3.5vw, 48px);
+    font-weight: 500; line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+  }
+  .report-title em { font-style: italic; color: var(--gold-light); }
+  .report-desc {
+    font-size: 15px; line-height: 1.8; font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 2rem;
+  }
+  .report-volumes {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .volume-item {
+    display: flex; align-items: flex-start; gap: 1.2rem;
+    padding: 1.2rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
+  }
+  .volume-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 400;
+    color: var(--gold);
+    line-height: 1; flex-shrink: 0;
+  }
+  .volume-info { flex: 1; }
+  .volume-title {
+    font-size: 14px; font-weight: 600;
+    color: var(--white);
+    margin-bottom: 3px;
+  }
+  .volume-sub {
+    font-size: 12px; color: rgba(255,255,255,0.45);
+    font-weight: 300;
+  }
+  .volume-status {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 10px;
+    background: rgba(184,146,42,0.2);
+    color: var(--gold-light);
+    margin-top: 6px; display: inline-block;
+  }
+
+  /* EXPERIENCE STRIP */
+  .experience { background: var(--white); }
+  .exp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 1rem;
+  }
+  .exp-item {
+    padding: 2rem;
+    border-top: 2px solid var(--light-gray);
+    transition: border-color 0.2s;
+  }
+  .exp-item:hover { border-color: var(--gold); }
+  .exp-period {
+    font-size: 11px; font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .exp-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 3px; line-height: 1.2;
+  }
+  .exp-org {
+    font-size: 13px; color: var(--text-muted);
+    font-weight: 300; margin-bottom: 0.8rem;
+  }
+  .exp-note {
+    font-size: 12px; line-height: 1.6;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  /* CONTACT */
+  .contact { background: var(--navy); text-align: center; }
+  .contact .section-label { justify-content: center; }
+  .contact .section-label::before { display: none; }
+  .contact .section-title { color: var(--white); }
+  .contact-sub {
+    font-size: 17px; font-weight: 300; line-height: 1.8;
+    color: rgba(255,255,255,0.6);
+    max-width: 520px; margin: 0 auto 3rem;
+  }
+  .contact-links {
+    display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .contact-link {
+    display: flex; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 14px; font-weight: 400;
+    padding: 10px 22px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s;
+  }
+  .contact-link:hover {
+    color: var(--white);
+    border-color: var(--gold-light);
+    background: rgba(184,146,42,0.1);
+  }
+  .contact-email {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 400;
+    color: var(--gold-light);
+    text-decoration: none;
+    display: block; margin-bottom: 0.5rem;
+    transition: color 0.2s;
+  }
+  .contact-email:hover { color: var(--white); }
+  .contact-location {
+    font-size: 13px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #08111F;
+    padding: 2rem 8%;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; color: rgba(255,255,255,0.4);
+  }
+  .footer-copy {
+    font-size: 12px; color: rgba(255,255,255,0.25);
+    letter-spacing: 0.04em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-text > * {
+    animation: fadeUp 0.7s ease forwards;
+    opacity: 0;
+  }
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-name { animation-delay: 0.25s; }
+  .hero-title { animation-delay: 0.35s; }
+  .hero-divider { animation-delay: 0.4s; }
+  .hero-statement { animation-delay: 0.5s; }
+  .hero-ctas { animation-delay: 0.65s; }
+  .hero-visual {
+    animation: fadeUp 0.9s 0.3s ease forwards;
+    opacity: 0;
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 100px; }
+    .hero-visual { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .report-inner { grid-template-columns: 1fr; padding: 3rem; }
+    .exp-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#"><span>A.</span>Abadariki</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#report">The Report</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Cross-sector Systems Analyst</p>
+    <h1 class="hero-name">Adebukola<br><em>Abadariki</em></h1>
+    <p class="hero-title">Data · Operations · Economic Development</p>
+    <div class="hero-divider"></div>
+    <p class="hero-statement">
+      Organisations are more efficient when complex data translates into <strong>clear operational and policy decisions.</strong> I turn data into decisions — across fintech, government, healthcare research, and public systems.
+    </p>
+    <div class="hero-ctas">
+      <a href="#portfolio" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame"></div>
+      <img class="hero-photo" src="asset/Headshot.png" alt="Adebukola Abadariki">
+      <div class="hero-badge">LJLA Fellow<br>VP, Class of Catalyst</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-left">
+      <p class="section-label">About</p>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="section-rule"></div>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Years Cross-sector Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">12K</div>
+          <div class="stat-label">LJLA Applicants — Top 30 Selected</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">21%</div>
+          <div class="stat-label">User Engagement Surge at MEVRON</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Continents of Analytical Work</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-body">
+      <p>I am a cross-sector strategy and operations analyst with over six years of experience turning complex data into decisions that drive institutional and operational performance.</p>
+      <p>My career has spanned fintech, e-hailing, government, healthcare research, and public policy — not by accident, but because the problems that interest me most sit at the intersection of data, institutions, and systems. I have built reporting frameworks for government executives, led market expansions across South-West Nigeria, conducted cancer research analysis presented at international conferences, and mapped rare disease risk populations for pharmaceutical clients across UK cities.</p>
+      <p>As a Fellow of the Lateef Jakande Leadership Academy — selected from over 12,000 applicants — I have worked embedded inside Lagos State Government, supporting Executive Directors and Special Advisers on revenue systems, infrastructure execution, and operational performance. I currently serve as Vice President of the Class of Catalyst cohort.</p>
+      <p>My thinking is increasingly oriented toward how data, institutions, and productive sectors — infrastructure, agriculture, mining — can drive economic outcomes and shared prosperity. That is the problem I want to spend my career on.</p>
+      <div class="about-tags">
+        <span class="tag">Systems Thinking</span>
+        <span class="tag">Data Analytics</span>
+        <span class="tag">Public Policy</span>
+        <span class="tag">Operations Strategy</span>
+        <span class="tag">Development Finance</span>
+        <span class="tag">Institutional Performance</span>
+        <span class="tag">SQL · Python · R · STATA</span>
+        <span class="tag">Tableau · Excel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise" id="expertise">
+  <p class="section-label">What I Do</p>
+  <h2 class="section-title">Core Areas of Practice</h2>
+  <div class="section-rule"></div>
+  <div class="expertise-grid">
+    <div class="expertise-card">
+      <span class="expertise-icon">⬡</span>
+      <h3>Data & Analytics</h3>
+      <p>Transforming complex datasets into actionable insights — from survival analysis and regression modelling to executive dashboards and performance reporting frameworks.</p>
+    </div>
+    <div class="expertise-card">
+      <span class="expertise-icon">⬡</span>
+      <h3>Strategy & Operations</h3>
+      <p>Designing and executing market expansion strategies, KPI tracking systems, and cross-functional operational frameworks that give leadership immediate visibility into where to act.</p>
+    </div>
+    <div class="expertise-card">
+      <span class="expertise-icon">⬡</span>
+      <h3>Public Systems & Policy</h3>
+      <p>Working at the intersection of government operations and data — revenue systems, service delivery analytics, institutional performance, and policy implementation support.</p>
+    </div>
+    <div class="expertise-card">
+      <span class="expertise-icon">⬡</span>
+      <h3>Research & Intelligence</h3>
+      <p>Producing research-grade analytical work — from healthcare data modelling to economic and trade intelligence — that informs real decisions at senior leadership level.</p>
+    </div>
+    <div class="expertise-card">
+      <span class="expertise-icon">⬡</span>
+      <h3>Programme Management</h3>
+      <p>Coordinating complex, multi-stakeholder initiatives from design through execution — tracking milestones, managing dependencies, and keeping leadership informed at every stage.</p>
+    </div>
+    <div class="expertise-card">
+      <span class="expertise-icon">⬡</span>
+      <h3>Economic Development</h3>
+      <p>Building understanding of how productive sectors — agriculture, mining, infrastructure — interact with institutions, capital, and policy to drive shared economic prosperity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <p class="section-label">Portfolio</p>
+  <h2 class="section-title">Selected Work</h2>
+  <p class="portfolio-intro">A selection of analytical and operational work across sectors. Each project represents a real problem, a real analysis, and a real decision improved.</p>
+  <div class="portfolio-grid">
+
+    <a class="project-card" href="https://github.com/aabadariki/Portfolio_Projects/blob/main/SQL_Portfolio_project_1.sql" target="_blank">
+      <p class="project-tag">Public Health · SQL</p>
+      <h3>Global COVID-19 Data Exploration</h3>
+      <p>Used SQL Server to analyse global COVID-19 datasets — examining infection rates, mortality patterns, and vaccination progress across countries and continents.</p>
+      <p class="project-insight">"Data infrastructure determines how fast a government can respond to a crisis."</p>
+      <div class="project-tools">
+        <span class="tool-tag">SQL</span>
+        <span class="tool-tag">Data Exploration</span>
+        <span class="tool-tag">Public Health</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/aabadariki/Portfolio_Projects/tree/main/NYSE_Project" target="_blank">
+      <p class="project-tag">Financial Analysis · Excel</p>
+      <h3>NYSE S&P 500 Revenue & Sector Analysis</h3>
+      <p>Analysed historical financial data from S&P 500 companies — built P&L statements, revenue forecasts, and sector comparison visualisations from Kaggle's NYSE dataset.</p>
+      <p class="project-insight">"Revenue growth across sectors is rarely equal — concentration risk is hidden in the average."</p>
+      <div class="project-tools">
+        <span class="tool-tag">Excel</span>
+        <span class="tool-tag">Financial Modelling</span>
+        <span class="tool-tag">Sector Analysis</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://public.tableau.com/app/profile/adebukola.abadariki/vizzes" target="_blank">
+      <p class="project-tag">Data Visualisation · Tableau</p>
+      <h3>Tableau Visualisation Portfolio</h3>
+      <p>A collection of dashboards, charts, and interactive visualisations — translating complex datasets into clear visual narratives for decision-makers and non-technical audiences.</p>
+      <p class="project-insight">"A chart that needs explaining has already failed half its job."</p>
+      <div class="project-tools">
+        <span class="tool-tag">Tableau</span>
+        <span class="tool-tag">Dashboards</span>
+        <span class="tool-tag">Data Storytelling</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/aabadariki/Portfolio_Projects/blob/main/Adebukola_Excel_Project_Bike_Dashboard.xlsx" target="_blank">
+      <p class="project-tag">Business Intelligence · Excel</p>
+      <h3>Bike Sales Performance Dashboard</h3>
+      <p>Transformed raw sales data into an interactive Excel dashboard — segmented by customer demographics, geography, and product category to surface insights for sales managers.</p>
+      <p class="project-insight">"A well-designed dashboard turns a sales manager's instinct into evidence."</p>
+      <div class="project-tools">
+        <span class="tool-tag">Excel</span>
+        <span class="tool-tag">Business Intelligence</span>
+        <span class="tool-tag">Sales Analytics</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ABADARIKI REPORT -->
+<section class="report" id="report">
+  <div class="report-inner">
+    <div>
+      <p class="report-label">Coming Soon</p>
+      <h2 class="report-title"><em>The Abadariki Report</em><br>Nigeria Export Intelligence Series</h2>
+      <p class="report-desc">A two-part practitioner's guide to exporting from Nigeria's productive sectors — combining systems analysis, regulatory intelligence, and practical operational guidance for entrepreneurs, businesses, and policymakers.</p>
+      <a href="#contact" class="btn-primary">Notify Me on Release</a>
+    </div>
+    <div class="report-volumes">
+      <div class="volume-item">
+        <div class="volume-num">01</div>
+        <div class="volume-info">
+          <div class="volume-title">Agriculture Exports</div>
+          <div class="volume-sub">From Farm to Foreign Market — A Practitioner's Guide to Agricultural Exports from Nigeria</div>
+          <div class="volume-status">In Progress</div>
+        </div>
+      </div>
+      <div class="volume-item">
+        <div class="volume-num">02</div>
+        <div class="volume-info">
+          <div class="volume-title">Mining Exports</div>
+          <div class="volume-sub">From Ground to Global Market — A Practitioner's Guide to Mining Exports from Nigeria</div>
+          <div class="volume-status">Coming Soon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <p class="section-label">Experience</p>
+  <h2 class="section-title">Where I Have Worked</h2>
+  <div class="section-rule"></div>
+  <div class="exp-grid">
+    <div class="exp-item">
+      <p class="exp-period">2024 – Present</p>
+      <p class="exp-role">LJLA Fellow & Sr. Special Assistant</p>
+      <p class="exp-org">Lagos State Government</p>
+      <p class="exp-note">Embedded across MDAs. Revenue systems, infrastructure execution, and operational policy support.</p>
+    </div>
+    <div class="exp-item">
+      <p class="exp-period">2024 – 2025</p>
+      <p class="exp-role">Programme Analyst</p>
+      <p class="exp-org">Lagos State Ministry of Innovation / LASPA</p>
+      <p class="exp-note">Produced a flagship report presented directly to the Governor of Lagos State.</p>
+    </div>
+    <div class="exp-item">
+      <p class="exp-period">2023 – 2024</p>
+      <p class="exp-role">Research & Analytics Consultant</p>
+      <p class="exp-org">Multiple Clients — USA / UK / Africa</p>
+      <p class="exp-note">Cancer research, rare disease mapping, World Bank data analysis, and pharmaceutical intelligence.</p>
+    </div>
+    <div class="exp-item">
+      <p class="exp-period">2023 – 2024</p>
+      <p class="exp-role">Senior Operations Manager</p>
+      <p class="exp-org">MEVRON</p>
+      <p class="exp-note">Led South-West expansion. Drove a 21% user engagement surge — highest in company history.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <p class="section-label">Contact</p>
+  <h2 class="section-title">Let's Work Together</h2>
+  <p class="contact-sub">Whether you are looking for an analyst, a collaborator, or someone to think through a complex systems problem — I would be glad to hear from you.</p>
+  <div class="contact-links">
+    <a href="https://www.linkedin.com/in/adebukola-abadariki/" target="_blank" class="contact-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/aabadariki" target="_blank" class="contact-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      GitHub
+    </a>
+    <a href="https://public.tableau.com/app/profile/adebukola.abadariki/vizzes" target="_blank" class="contact-link">
+      ⬡ Tableau Public
+    </a>
+  </div>
+  <a href="mailto:aabadariki@yahoo.com" class="contact-email">aabadariki@yahoo.com</a>
+  <p class="contact-location">Lagos, Nigeria &nbsp;·&nbsp; Available for Remote Collaboration</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Adebukola Abadariki</span>
+  <span class="footer-copy">© 2026 · All rights reserved</span>
+</footer>
+
+<!-- JS FOR MOBILE MENU -->
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+  }
+</script>
+
+</body>
 </html>
